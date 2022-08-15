@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multi Counter Application</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- import redux from cdn -->
+        <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    </head>
+    <body>
+        <div class="w-screen h-screen p-10 bg-gray-100 text-slate-700">
+            <!-- header -->
+            <h1 class="max-w-md mx-auto text-center text-2xl font-bold">
+                Multi Counter Application
+            </h1>
+
+            <!-- counters -->
+            <section id="multi-counter">
+                <div class="mx-auto max-w-md mt-10 space-y-5">
+                    <div class="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow">
+                        <div id="counter-1" class="text-2xl font-semibold"></div>
+                        <div class="flex space-x-3">
+                            <button
+                                class="bg-indigo-400 text-white px-3 py-2 rounded shadow"
+                                id="increment-1"
+                                onclick="increamentHandeler(1)"
+                            >
+                                Increment
+                            </button>
+                            <button
+                                class="bg-red-400 text-white px-3 py-2 rounded shadow"
+                                id="decrement-1"
+                                onclick="decreamentHandeler(1)"
+                            >
+                                Decrement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="mx-auto max-w-md mt-10 space-y-2">
+                <div class="p-2 h-auto flex flex-col items-center justify-center space-y-2">
+                    <div class="flex space-x-3">
+                        <label class="block">
+                            <span class="block text-sm font-medium text-slate-700">Increment By (Default 5)</span>
+                            <input 
+                                type="number" 
+                                id="increment-by"
+                                placeholder="Increment By"
+                                value="5"
+                                class="border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                            />
+                        </label>
+                        <label class="block">
+                            <span class="block text-sm font-medium text-slate-700">Decrement By (Default 2)</span>
+                            <input 
+                                type="number" 
+                                id="decrement-by"
+                                placeholder="Decrement By"
+                                value="2"
+                                class="border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                            />
+                        </label>
+                        <button
+                            class="bg-indigo-400 text-white px-3 py-2 rounded shadow"
+                            onclick="addNew()"
+                        >
+                            Add
+                        </button>
+                        <button
+                            class="bg-red-400 text-white px-3 py-2 rounded shadow"
+                            id="decrement"
+                            onclick="resetAll()"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
